@@ -1,0 +1,21 @@
+CREATE TABLE Tache 
+( 
+ id_tache INT AUTO_INCREMENT,
+ nom VARCHAR(50) NOT NULL ,
+ description TEXT NOT NULL ,
+ echeance DATE NOT NULL ,
+ donneur_ordre VARCHAR(50) NOT NULL,
+ destinataire VARCHAR(50) NOT NULL,
+ PRIMARY KEY (id_tache)
+);
+
+CREATE TABLE Utilisateur (
+    id_utilisateur INT AUTO_INCREMENT,
+    role ENUM('directeur','technicien','client') NOT NULL DEFAULT 'client',
+    email VARCHAR(255) UNIQUE NOT NULL,
+    motdepasse VARCHAR(12)NOT NULL,
+    actif ENUM('Oui','Non') NOT NULL DEFAULT 'Oui',
+    id_tache INT,
+    PRIMARY KEY (id_utilisateur),
+    FOREIGN KEY (id_tache) REFERENCES Tache(id_tache)
+    );
