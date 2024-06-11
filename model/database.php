@@ -7,7 +7,7 @@
 
  function connect() {
 
-    $dsn = 'mysql:dbname=classicmodels;host=127.0.0.1';
+    $dsn = 'mysql:dbname=todo;host=127.0.0.1';
     $user = 'root';
     $password = 'root';
 
