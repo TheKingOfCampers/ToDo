@@ -1,4 +1,5 @@
 <?php 
-require('./view/create_user.phtml');
+require('./controller/create.php');
+
 
 ?>
