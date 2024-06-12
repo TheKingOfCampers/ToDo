@@ -6,10 +6,10 @@ function updateTask($id) : mixed {
     $database = connect_db();
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $status = $_POST['status'];
-        $id = $_POST['id'];
+        $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
+        $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+        $status = htmlspecialchars($_POST['status'], ENT_QUOTES);
+        $id = htmlspecialchars($_POST['id'], ENT_QUOTES);
 
     $sql = "UPDATE task SET name =:name, description =:description,  status = :status WHERE = :id";
 
