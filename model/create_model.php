@@ -9,7 +9,7 @@ function createUser(): array
         $role = htmlspecialchars($_POST['role'], ENT_QUOTES);
         $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES);
         $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES);
-        $active = htmlspecialchars(isset($_POST['active']) ? 1 :0, ENT_QUOTES);
+        $active = isset($_POST['active']) ? 1 :0;
         $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
         $identifier = htmlspecialchars($_POST['identifier'], ENT_QUOTES);
 
