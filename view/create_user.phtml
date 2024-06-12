@@ -11,30 +11,30 @@
     <header>
     <div class="container">
 
-    <form class="d-flex flex-column align-items-center text-center" method="post">
+    <form class="d-flex flex-column align-items-center text-center" action="#" method="post">
   <div class="mb-3">
     <label for="role" class="form-label" name="role">Role</label>
-    <input type="text" class="form-control" name="role">
+    <input type="text" class="form-control" name="role" required>
   </div>
   <div class="mb-3">
     <label for="first_name" class="form-label" name="first_name">Prénom</label>
-    <input type="text" class="form-control" name="first_name">
+    <input type="text" class="form-control" name="first_name" required>
   </div>
   <div class="mb-3">
     <label for="last_name" class="form-label" name="last_name">Nom</label>
-    <input type="text" class="form-control" name="last_name">
+    <input type="text" class="form-control" name="last_name" required>
   </div>
   <div class="mb-3">
-  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" name="active">
+  <input type="checkbox" class="btn-check" id="active" autocomplete="off" name="active">
   <label class="btn btn-outline-primary" for="active">Actif</label>
   </div>
   <div class="mb-3">
     <label for="identifier" class="form-label" name="identifier">Identifiant</label>
-    <input type="text" class="form-control" name="identifier">
+    <input type="text" class="form-control" name="identifier" required>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label" name="password">Password</label>
-    <input type="password" class="form-control" name="password">
+    <input type="password" class="form-control" name="password" required>
   </div>
   <div class="mb-3 form-check">
   </div>
