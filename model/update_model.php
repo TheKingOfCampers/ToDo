@@ -37,12 +37,12 @@ function updateUser($id) : mixed {
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $id = $_POST['id'];
-        $role = $_POST['role'];
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $active = $_POST['active'];
-        $password = $_POST['password'];
-        $identifier = $_POST['identifier'];
+        $role = htmlspecialchars($_POST['role'], ENT_QUOTES);
+        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES);
+        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES);
+        $active = htmlspecialchars($_POST['active'], ENT_QUOTES);
+        $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+        $identifier = htmlspecialchars($_POST['identifier'], ENT_QUOTES);
 
         $sql = "UPDATE user SET role = :role, first_name = :first_name, last_name=:last_name, active=:active, password =:password, identifier=:identifier WHERE id=:id";
 
