@@ -25,7 +25,8 @@ function addfirstTask()
         $database = connect_db();
         $role = $_POST['roleUser'];
         $email = $_POST['emailUser'];
-        $motdepasse = $_POST['mdpUser'];
+        $mdp = $_POST['mdpUser'];
+        $motdepasse = password_hash($mdp,PASSWORD_BCRYPT);
         $actif = $_POST['boolUser'];
         $sql2 = "INSERT INTO `Utilisateur` (`role`,`email`,`motdepasse`,`actif`,`id_tache`) 
         VALUES (:role,:email,:motdepasse,:actif,:id_tache)";
