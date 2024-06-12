@@ -13,7 +13,7 @@ CREATE TABLE Utilisateur (
     id_utilisateur INT AUTO_INCREMENT,
     role ENUM('directeur','technicien','client') NOT NULL DEFAULT 'client',
     email VARCHAR(255) UNIQUE NOT NULL,
-    motdepasse VARCHAR(12)NOT NULL,
+    motdepasse VARCHAR(255)NOT NULL,
     actif ENUM('Oui','Non') NOT NULL DEFAULT 'Oui',
     id_tache INT,
     PRIMARY KEY (id_utilisateur),
