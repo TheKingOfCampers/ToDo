@@ -1,5 +1,4 @@
 <?php 
-
 require('./config.php');
 require('./model/update_model.php');
 
