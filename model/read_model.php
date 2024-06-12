@@ -1,5 +1,4 @@
 <?php 
-
 function getUsers(){
 
     $database = connect_db();

@@ -46,10 +46,10 @@ function createUser(): array
         $query->execute();
 
         // RÉCUPÉRATION DES DONNÉES DE LA REQUÊTE
-        $datas = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
 
         // RENVOIE LES DATAS FINALES
-        return $datas;
+        
     
 }
     //Ajout task//
