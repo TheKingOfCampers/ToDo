@@ -46,7 +46,7 @@
 <h2>Users</h2>
 <table class="table">
   <thead>
-    <tr>
+    <tr class="table-light">
       <th scope="col">PRENOM</th>
       <th scope="col">NOM</th>
       <th scope="col">ROLE</th>
@@ -54,7 +54,7 @@
   </thead>
   <tbody>
     <?php  foreach($getUsers as $user): ?>
-    <tr>
+    <tr class="table-success">
       <td><?php echo $user['first_name'] ?></td>
       <td><?php echo $user['last_name'] ?></td>
       <td><?php echo $user['role'] ?></td>
