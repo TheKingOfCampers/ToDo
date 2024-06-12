@@ -7,9 +7,9 @@ function getUsers(){
 
     $query = $database->prepare($sql);
     $query->execute();
-    $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $query->fetchAll(PDO::FETCH_ASSOC);
 
-    return $data;
     
 
 

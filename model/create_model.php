@@ -1,7 +1,7 @@
 ?<?php
 
 //Ajout User//
-function createUser(): array
+function createUser()
 {
     $database = connect_db();
 
@@ -45,11 +45,6 @@ function createUser(): array
         // EXÉCUTION DE LA REQUÊTE
         $query->execute();
 
-        // RÉCUPÉRATION DES DONNÉES DE LA REQUÊTE
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-
-        // RENVOIE LES DATAS FINALES
-        
     
 }
     //Ajout task//
