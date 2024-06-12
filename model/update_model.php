@@ -6,10 +6,10 @@ function updateTask($id) : mixed {
     $database = connect_db();
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $status = $_POST['status'];
-        $id = $_POST['id'];
+        $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
+        $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+        $status = htmlspecialchars($_POST['status'], ENT_QUOTES);
+        $id = htmlspecialchars($_POST['id'], ENT_QUOTES);
 
     $sql = "UPDATE task SET name =:name, description =:description,  status = :status WHERE = :id";
 
@@ -37,12 +37,12 @@ function updateUser($id) : mixed {
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $id = $_POST['id'];
-        $role = $_POST['role'];
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $active = $_POST['active'];
-        $password = $_POST['password'];
-        $identifier = $_POST['identifier'];
+        $role = htmlspecialchars($_POST['role'], ENT_QUOTES);
+        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES);
+        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES);
+        $active = htmlspecialchars($_POST['active'], ENT_QUOTES);
+        $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+        $identifier = htmlspecialchars($_POST['identifier'], ENT_QUOTES);
 
         $sql = "UPDATE user SET role = :role, first_name = :first_name, last_name=:last_name, active=:active, password =:password, identifier=:identifier WHERE id=:id";
 
