@@ -1,63 +1,55 @@
 <?php
 
+
 require_once('./config.php');
 
-////delete task
+function deleteTask($id) : mixed {
 
+    $database = connect_db();
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-if(!empty($_GET['id'])){
-
-    $id=$_REQUEST['id'];
-
-}
-
-if(!empty($_POST)){
-
-    $id= $_POST['id'];
-    $pdo=connect_db();
+        $id = $_POST['id'];
 
         $sql = "DELETE FROM task  WHERE id =:id";
 
-        $query = $pdo->prepare($sql);
-        $query->bindParam('id',$id,PDO::PARAM_INT);
+    $query = $database->prepare($sql);
+
+    $query -> bindParam(':id', $id, PDO::PARAM_INT);
+    $query ->execute();
+    $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
-        $query->execute();
-        $data= $query->fetchAll(PDO::FETCH_ASSOC);
-
-        return $data;
+    return $data;
 
 
+    }
 
-
+   
+ 
 }
-////delete user
+function deleteUser($id) : mixed {
 
-if(!empty($_GET['id'])){
+    $database = connect_db();
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $id=$_REQUEST['id'];
-
-}
-
-if(!empty($_POST)){
-
-    $id= $_POST['id'];
-    $pdo=connect_db();
+        $id = $_POST['id'];
+       
 
         $sql = "DELETE FROM user  WHERE id =:id";
 
-        $query = $pdo->prepare($sql);
-        $query->bindParam('id',$id,PDO::PARAM_INT);
-
-
+        $query = $database->prepare($sql);
+    
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
-        $data= $query->fetchAll(PDO::FETCH_ASSOC);
+        
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
-        
 
+    }
 
 
 }
+
 
 ?>
