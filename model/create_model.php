@@ -6,12 +6,12 @@ function createUser()
     $database = connect_db();
 
     
-        $role = htmlspecialchars($_POST['role'], ENT_QUOTES);
-        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES);
-        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES);
+        $role = htmlspecialchars($_POST['role'], ENT_QUOTES,'UTF-8');
+        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES, 'UTF-8');
+        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES, 'UTF-8');
         $active = isset($_POST['active']) ? 1 :0;
-        $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
-        $identifier = htmlspecialchars($_POST['identifier'], ENT_QUOTES);
+        $password = htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8');
+        $identifier = htmlspecialchars($_POST['identifier'], ENT_QUOTES, 'UTF-8');
 
         $SQL = "
             INSERT INTO user 
