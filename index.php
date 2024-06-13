@@ -1,6 +1,3 @@
-<?php 
-require('./controller/create.php');
-//require('./controller/update.php');
-
-
-?>
+<?php
+require_once('./controller/create.php');
+//require_once('./controller/read.php');

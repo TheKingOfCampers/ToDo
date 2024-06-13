@@ -1,5 +1,5 @@
 <?php 
-function getUsers(){
+function getUsers() : array{
 
     $database = connect_db();
 
@@ -7,6 +7,7 @@ function getUsers(){
 
     $query = $database->prepare($sql);
     $query->execute();
+  
     
     return $query->fetchAll(PDO::FETCH_ASSOC);
 
