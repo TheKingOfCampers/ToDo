@@ -31,24 +31,13 @@ function deleteUser($id) : bool {
 
     $database = connect_db();
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-       
-
         $sql = "DELETE FROM user  WHERE id =:id";
 
         $query = $database->prepare($sql);
-    
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
 
         return $query->rowCount() > 0;
     }
-
-    return false;
-
     }
-
-
-
-
-
 ?>
