@@ -27,12 +27,10 @@ function deleteTask($id) : mixed {
    
  
 }
-function deleteUser($id) : mixed {
+function deleteUser($id) : bool {
 
     $database = connect_db();
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        $id = $_POST['id'];
        
 
         $sql = "DELETE FROM user  WHERE id =:id";
@@ -41,15 +39,16 @@ function deleteUser($id) : mixed {
     
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
-        
-        $data = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        return $data;
+        return $query->rowCount() > 0;
+    }
+
+    return false;
 
     }
 
 
-}
+
 
 
 ?>
