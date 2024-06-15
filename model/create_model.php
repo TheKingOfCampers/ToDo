@@ -47,7 +47,7 @@ function createUser()
 
     
 }
-    //Ajout task//
+    //Ajout task pas encore fonctionnel//
     function createTask(): array
     {
         $database = connect_db();

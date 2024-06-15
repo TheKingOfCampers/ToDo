@@ -1,8 +1,5 @@
 <?php
-
-
-require_once('./config.php');
-
+//pas encore fonctionnel
 function deleteTask($id) : mixed {
 
     $database = connect_db();

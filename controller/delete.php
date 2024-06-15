@@ -1,7 +1,7 @@
 <?php 
 
-require('./config.php');
-require('./model/delete_model.php');
+require(__DIR__.'/../config.php');
+require(__DIR__.'/../model/delete_model.php');
 
 if(isset($_GET['id'])){
 
