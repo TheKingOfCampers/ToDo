@@ -31,20 +31,15 @@ function updateTask($id) : mixed {
  
 }
 
-function updateUser($id, $first_name, $last_name, $role) : bool {
+function updateUser($id) : bool {
 
     $database = connect_db();
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+   
 
-        if (isset($_POST['role'])) {
-        $role = htmlspecialchars($_POST['role'], ENT_QUOTES);
-        }
-        if (isset($_POST['first_name'])) {
-        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES);
-        }
-        if (isset($_POST['last_name'])) {
-        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES);
-        }
+        $role = htmlspecialchars($_POST['role'], ENT_QUOTES,'UTF-8');
+        $first_name = htmlspecialchars($_POST['first_name'], ENT_QUOTES,'UTF-8');
+        $last_name = htmlspecialchars($_POST['last_name'], ENT_QUOTES,'UTF-8');
+        
        
 
         $sql = "UPDATE user SET role = :role, first_name = :first_name, last_name = :last_name WHERE id=:id";
@@ -56,11 +51,11 @@ function updateUser($id, $first_name, $last_name, $role) : bool {
        // $query->bindParam(':active', $active, PDO::PARAM_INT);
        // $query->bindParam(':password', $password, PDO::PARAM_STR);
        // $query->bindParam(':identifier', $identifier, PDO::PARAM_STR);
-        $query->bindParam(':id', $role, PDO::PARAM_INT);
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
 
        return $query->execute();
 
-    }
+    
 
 
 }
